@@ -11,51 +11,51 @@
 
 <body>
     <div class="calculator">
-        <input type="text" id="s1" maxlength="20">
+        <input type="text" id="s1" maxlength="20" oninput="calculate()">
         <input type="text" id="s2" maxlength="20" readonly>
         <div class="calc-buttons">
 
-            <div class="functions-one">
-                <button class="button ">MC</button>
-                <button class="button ">MR</button>
-                <button class="button ">M+</button>
-                <button class="button ">M-</button>
-                <button class="button ">MS</button>
-                <button class="button complex-stuff">2<sup>nd</sup></button>
-                <button class="button complex-stuff">&pi;</button>
-                <button class="button complex-stuff">e</button>
-                <button class="button complex-stuff">C</button>
-                <button class="button complex-stuff">&#x232b;</button>
-                <button class="button complex-stuff">x<sup>2</sup></button>
-                <button class="button complex-stuff">&#xBD;</button>
-                <button class="button complex-stuff">| x |</button>
-                <button class="button complex-stuff">exp</button>
-                <button class="button complex-stuff">mod</button>
-                <button class="button complex-stuff">2&radic;x</button>
-                <button class="button complex-stuff">(</button>
-                <button class="button complex-stuff">)</button>
-                <button class="button complex-stuff">n!</button>
-                <button class="button basix-op" onclick="opclick('/');">÷</button>
-                <button class="button complex-stuff">x<sup>y</sup></button>
-                <button class="button numbers" onclick="btnclick(7);">7</button>
-                <button class="button numbers" onclick="btnclick(8);">8</button>
-                <button class="button numbers" onclick="btnclick(9);">9</button>
-                <button class="button basix-op" onclick="opclick('*');">x</button>
-                <button class="button complex-stuff">10<sup>x</sup></button>
-                <button class="button numbers" onclick="btnclick(4);">4</button>
-                <button class="button numbers" onclick="btnclick(5);">5</button>
-                <button class="button numbers" onclick="btnclick(6);">6</button>
-                <button class="button basix-op" onclick="opclick('-');">-</button>
-                <button class="button complex-stuff">log</button>
-                <button class="button numbers" onclick="btnclick(1);">1</button>
-                <button class="button numbers" onclick="btnclick(2);">2</button>
-                <button class="button numbers" onclick="btnclick(3);">3</button>
-                <button class="button basix-op" onclick="opclick('+');">+</button>
-                <button class="button complex-stuff">ln</button>
-                <button class="button numbers">+/-</button>
-                <button class="button numbers" onclick="btnclick(0);">0</button>
-                <button class="button numbers">.</button>
-                <button class="button equals">=</button>
+            <div class="btns">
+                <button class="mbtns">MC</button>
+                <button class="mbtns">MR</button>
+                <button class="mbtns">M+</button>
+                <button class="mbtns">M-</button>
+                <button class="mbtns">MS</button>
+                <button class="complex-stuff">2<sup>nd</sup></button>
+                <button class="complex-stuff" onclick="pi();">&pi;</button>
+                <button class="complex-stuff" onclick="e();">e</button>
+                <button class="complex-stuff" onclick="btnclear();">C</button>
+                <button class="complex-stuff" onclick="btnback();">&#x232b;</button>
+                <button class="complex-stuff" onclick="btnsquare();">&#119909;&#178;</button>
+                <button class="complex-stuff" onclick="btnfrac();"> &#8543;&#x2093;</button>
+                <button class="complex-stuff" onclick="abs();">| x |</button>
+                <button class="complex-stuff">exp</button>
+                <button class="complex-stuff">mod</button>
+                <button class="complex-stuff" onclick="btnsqrt()">2&radic;x</button>
+                <button class="complex-stuff" onclick="btnclick('\(');">(</button>
+                <button class="complex-stuff" onclick="btnclick('\)');">)</button>
+                <button class="complex-stuff" onclick="fact();">&#119899;!</button>
+                <button class="basix-op" onclick="opclick('/');">÷</button>
+                <button class="complex-stuff" onclick="exp();">x<sup>y</sup></button>
+                <button class="numbers" onclick="btnclick(7);">7</button>
+                <button class="numbers" onclick="btnclick(8);">8</button>
+                <button class="numbers" onclick="btnclick(9);">9</button>
+                <button class="basix-op" onclick="opclick('*');">x</button>
+                <button class="complex-stuff">10<sup>x</sup></button>
+                <button class="numbers" onclick="btnclick(4);">4</button>
+                <button class="numbers" onclick="btnclick(5);">5</button>
+                <button class="numbers" onclick="btnclick(6);">6</button>
+                <button class="basix-op" onclick="opclick('-');">-</button>
+                <button class="complex-stuff">log</button>
+                <button class="numbers" onclick="btnclick(1);">1</button>
+                <button class="numbers" onclick="btnclick(2);">2</button>
+                <button class="numbers" onclick="btnclick(3);">3</button>
+                <button class="basix-op" onclick="opclick('+');">+</button>
+                <button class="complex-stuff">ln</button>
+                <button class="numbers" onclick="btnplusminus();">+/-</button>
+                <button class="numbers" onclick="btnclick(0);">0</button>
+                <button class="numbers">.</button>
+                <button class="equals" onclick="btnequals();">=</button>
             </div>
         </div>
     </div>

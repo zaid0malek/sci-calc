@@ -19,8 +19,8 @@ ip.onblur = function () {
 }
 
 function btnclick(x) {
-    y = ip1.value + x
-    ip1.value = y;
+    // y = ip1.value + x
+    ip1.value += x;
 
     // num2 = num2 + x;
     // ip2.value = eval(num2);
@@ -76,12 +76,12 @@ function btnclear() {
     op = "";
     num2 = "";
 }
-function btnsquare() {
+// function btnsquare() {
 
 
-    ip1.value = ip2.value + "^2";
-    ip2.value = ip2.value ** 2;
-}
+//     ip1.value = ip2.value + "**2";
+//     calculate();
+// }
 function btnback() {
     num2 = ip1.value.slice(0, -1)
     ip1.value = num2;
@@ -116,14 +116,14 @@ function btnequals() {
 function btnplusminus() {
     ip2.value = ip2.value * -1;
 }
-function pi() {
-    ip1.value += 3.14159;
-    calculate();
-}
-function e() {
-    ip1.value += 2.71828;
-    calculate();
-}
+// function pi() {
+//     ip1.value += 3.14159;
+//     calculate();
+// }
+// function e() {
+//     ip1.value += 2.71828;
+//     calculate();
+// }
 function btnfrac() {
     ip1.value = ip2.value + "^-1"
     ip2.value = ip2.value ** -1
@@ -147,6 +147,16 @@ function fact() {
     ip.value += '!'
     ip2.value = f
 }
-function exp() {
-    ip1.value += "**"
+
+function pten() {
+    ip1.value = "10**" + ip2.value
+    calculate()
+}
+function log() {
+    ip1.value = "log(" + ip2.value + ")"
+    ip2.value = Math.log10(ip2.value)
+}
+function nlog() {
+    ip1.value = "ln(" + ip2.value + ")"
+    ip2.value = Math.log(ip2.value)
 }

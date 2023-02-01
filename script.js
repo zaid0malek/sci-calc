@@ -1,22 +1,23 @@
 ip1 = document.getElementById("s1")
 ip2 = document.getElementById("s2")
+ip2.value = 0
 num1 = 0;
 op = "";
 num2 = "";
 arr = []
 
-ip = ip1
-ip2.value = 0;
-ip.focus();
+// ip = ip1
+// ip2.value = 0;
+// ip.focus();
 
-ip.onblur = function () {
-    setTimeout(function () {
-        ip.focus();
-        val = ip1.value;
-        ip1.value = '';
-        ip1.value = val;
-    }, 500);
-}
+// ip.onblur = function () {
+//     setTimeout(function () {
+//         ip.focus();
+//         val = ip1.value;
+//         ip1.value = '';
+//         ip1.value = val;
+//     }, 500);
+// }
 
 function btnclick(x) {
     // y = ip1.value + x
@@ -71,10 +72,11 @@ function opclick(x) {
 // }
 function btnclear() {
     ip1.value = "";
-    ip2.value = "";
+    ip2.value = "0";
     num1 = 0;
     op = "";
     num2 = "";
+    document.getElementById('trignometry').getElementsByTagName('option')[0].selected = 'selected'
 }
 // function btnsquare() {
 
@@ -124,10 +126,10 @@ function btnplusminus() {
 //     ip1.value += 2.71828;
 //     calculate();
 // }
-function btnfrac() {
-    ip1.value = ip2.value + "^-1"
-    ip2.value = ip2.value ** -1
-}
+// function btnfrac() {
+//     ip1.value = ip2.value + "^-1"
+//     ip2.value = ip2.value ** -1
+// }
 function abs() {
     ip2.value = Math.abs(ip2.value)
 }
@@ -138,13 +140,13 @@ function btnsqrt() {
 }
 function fact() {
     f = 1
-    n = ip1.value
+    n = ip2.value
     for (i = 1; i <= n; i++) {
         f *= i;
 
     }
 
-    ip.value += '!'
+    ip1.value = ip2.value + '!'
     ip2.value = f
 }
 

@@ -13,14 +13,26 @@
     <div class="calculator">
         <input type="text" id="s1" maxlength="20" oninput="calculate()">
         <input type="text" id="s2" maxlength="20" readonly>
-        <div class="calc-buttons">
 
+        <div class="calc-buttons">
+            <select class="trignometry" id="trignometry" onchange="trigo(value);">
+                <option value="trig" disabled selected>trignometry</option>
+                <option value="sin">sin</option>
+                <option value="cos">cos</option>
+                <option value="tan">tan</option>
+                <option value="cosec">cosec</option>
+                <option value="sec">sec</option>
+                <option value="cot">cot</option>
+            </select>
             <div class="btns">
+
+
                 <button class="mbtns" onclick="mclr();">MC</button>
                 <button class="mbtns" onclick="mr();">MR</button>
                 <button class="mbtns" onclick="mplus();">M+</button>
                 <button class="mbtns" onclick="mminus();">M-</button>
                 <button class="mbtns" onclick="ms();">MS</button>
+
                 <button class="complex-stuff">2<sup>nd</sup></button>
                 <button class="complex-stuff" onclick="btnclick(3.14159);">&pi;</button>
                 <button class="complex-stuff" onclick="btnclick(2.71828);">e</button>
@@ -63,5 +75,6 @@
 </body>
 <script src="script.js"></script>
 <script src="memfunc.js"></script>
+<script src="trig.js"></script>
 
 </html>

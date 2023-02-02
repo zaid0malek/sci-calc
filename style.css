@@ -82,6 +82,21 @@ button:hover {
 }
 
 .basix-op,
-.complex-stuff {
+.complex-stuff,
+#degrad {
     background-color: #DADCE0;
+}
+
+.trignometry {
+    background-color: #DADCE0;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    /* outline: none; */
+
+}
+
+option {
+    text-align: center;
+    cursor: pointer;
 }

@@ -1,164 +1,137 @@
 ip1 = document.getElementById("s1")
-ip2 = document.getElementById("s2")
-ip2.value = 0
-num1 = 0;
-op = "";
-num2 = "";
-arr = []
+op = document.getElementById("s2")
+op.value = 0
 
-// ip = ip1
-// ip2.value = 0;
-// ip.focus();
-
-// ip.onblur = function () {
-//     setTimeout(function () {
-//         ip.focus();
-//         val = ip1.value;
-//         ip1.value = '';
-//         ip1.value = val;
-//     }, 500);
-// }
-
+//this fuction is called when user clicks various buttons 
+//it adds value of that button to ip1(i.e. screen/inputbox)
 function btnclick(x) {
-    // y = ip1.value + x
     ip1.value += x;
-
-    // num2 = num2 + x;
-    // ip2.value = eval(num2);
-    // calculate(num2);
     calculate();
 
 }
+
+//this fuction is called when user clicks on any operator
 function opclick(x) {
-    // y = ip1.value + x
-    ip1.value += x;
-
-    // num2 = num2 + x;
-    // y = ip1.value + x
-    // ip1.value = y;
-    // arr = arr.concat(num2);
-    // arr = arr.concat(x);
-    // op = x;
-    // num1 = z;
-    // num2 = "";
-
-    // console.log(arr);
-
+    if (ip1.value.length == 0) {  //it checks if there is an empty textbox then it adds 0 before operator so that it doesnt give any error
+        ip1.value = "0" + x;
+    }
+    else {
+        lastchar = ip1.value.charAt(ip1.value.length - 1)
+        //below if statement checks wheather the last element is an operator or not
+        //if it is any operator than it remove that opeator and add the new one 
+        //(eg: 2++ gives error) hence 2+ 
+        if (lastchar == '+' || lastchar == '-' || lastchar == '*' || lastchar == '/' || lastchar == '%') {
+            ip1.value = ip1.value.slice(0, -1)
+            ip1.value += x;
+        }
+        else {
+            ip1.value += x;
+        }
+    }
 }
-// function calculate(num) {
 
-//     switch (op) {
-//         case '+':
-//             z = Number(num1) + Number(num);
-//             break;
-//         case '-':
-//             z = Number(num1) - Number(num);
-//             break;
-//         case 'x':
-//             z = Number(num1) * Number(num);
-//             break;
-//         case '÷':
-//             z = Number(num1) / Number(num);
-//             break;
-//         default:
-//             z = Number(num2);
-//     }
-
-
-
-//     
-
-
-// }
+//this function clears the input box
 function btnclear() {
     ip1.value = "";
-    ip2.value = "0";
-    num1 = 0;
-    op = "";
-    num2 = "";
+    op.value = "0";
+
     document.getElementById('trignometry').getElementsByTagName('option')[0].selected = 'selected'
 }
-// function btnsquare() {
 
-
-//     ip1.value = ip2.value + "**2";
-//     calculate();
-// }
+//removes 1 element from right
 function btnback() {
     num2 = ip1.value.slice(0, -1)
     ip1.value = num2;
-    if (num2 == "") {
-        ip2.value = 0;
+    if (num2 == "") {//if no elements then set output 0
+        op.value = 0;
 
     }
     else {
-        ip2.value = eval(num2);
+        op.value = eval(num2);
     }
 }
 
+//this function performs arithmetic operations using inbuilt eval() function
 function calculate() {
     val = ip1.value;
 
     try {
         if (val == "") {
-            ip2.value = 0;
+            op.value = 0;
 
         }
         else {
-            ip2.value = eval(val);
+            op.value = eval(val);
         }
     }
     catch (err) {
-        ip2.value = "Error";
+        op.value = "Error";
+    }
+    ip = ip1
+    ip.focus();
+    val = ip1.value;
+    ip1.value = '';
+    ip1.value = val;
+    ip.onblur = function () {
+        ip.focus();
+
+
     }
 }
+
+//sets the value of output in input
+//so that user can work with the output
 function btnequals() {
-    ip1.value = ip2.value;
+    ip1.value = op.value;
 }
+
+//converts negative to positive and positive to negative
 function btnplusminus() {
-    ip2.value = ip2.value * -1;
+    op.value = op.value * -1;
 }
-// function pi() {
-//     ip1.value += 3.14159;
-//     calculate();
-// }
-// function e() {
-//     ip1.value += 2.71828;
-//     calculate();
-// }
-// function btnfrac() {
-//     ip1.value = ip2.value + "^-1"
-//     ip2.value = ip2.value ** -1
-// }
+
+//convert any number to positive 
+//called by |x|
 function abs() {
-    ip2.value = Math.abs(ip2.value)
+    op.value = Math.abs(op.value)
 }
+
+//perfroms square root of given input
 function btnsqrt() {
 
     ip1.value = '\u221A' + ip1.value
-    ip2.value = Math.sqrt(ip2.value)
+    op.value = Math.sqrt(op.value)
 }
+
+//performs factorical of input
+//called by n!
 function fact() {
     f = 1
-    n = ip2.value
+    n = op.value
     for (i = 1; i <= n; i++) {
         f *= i;
 
     }
 
-    ip1.value = ip2.value + '!'
-    ip2.value = f
+    ip1.value = op.value + '!'
+    op.value = f
 }
 
+//it finds power of 10
+//called by 10^x
 function pten() {
-    ip1.value = "10**" + ip2.value
+    ip1.value = "10**" + op.value
     calculate()
 }
+
+//performs log base 10
 function log() {
-    ip1.value = "log(" + ip2.value + ")"
-    ip2.value = Math.log10(ip2.value)
+    ip1.value = "log(" + op.value + ")"
+    op.value = Math.log10(op.value)
 }
+
+//performs natural log
 function nlog() {
-    ip1.value = "ln(" + ip2.value + ")"
-    ip2.value = Math.log(ip2.value)
+    ip1.value = "ln(" + op.value + ")"
+    op.value = Math.log(op.value)
 }

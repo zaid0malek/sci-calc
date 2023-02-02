@@ -93,6 +93,9 @@ function deg(func) {
 
 //takes values from i
 function trigo(valx) {
+
+    fnow()
+
     if (ip1.value.length >= 5) {
         nums = ip1.value.match(/(\d+)/);
         trigval = nums[0]

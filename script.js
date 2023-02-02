@@ -67,18 +67,20 @@ function calculate() {
     catch (err) {
         op.value = "Error";
     }
-    ip = ip1
-    ip.focus();
+
+    fnow()
+}
+function fnow() {
+    ip1.focus();
     val = ip1.value;
     ip1.value = '';
     ip1.value = val;
-    ip.onblur = function () {
+    ip1.onblur = function () {
         ip.focus();
 
 
     }
 }
-
 //sets the value of output in input
 //so that user can work with the output
 function btnequals() {

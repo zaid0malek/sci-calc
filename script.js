@@ -76,7 +76,7 @@ function fnow() {
     ip1.value = '';
     ip1.value = val;
     ip1.onblur = function () {
-        ip.focus();
+        ip1.focus();
 
 
     }
